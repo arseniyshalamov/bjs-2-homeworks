@@ -1,8 +1,12 @@
-ffunction compareArrays(arr1, arr2) {
+function compareArrays(arr1, arr2) {
     return arr1.length === arr2.length && arr1.every((element, index) => element === arr2[index]);
   }
   
-  console.log(compareArrays([8, 1, 2], [8, 1, 2])); 
+  compareArrays([8, 9], [6]) // false, разные значения
+  compareArrays([8, 9, 5, 4], [8, 9, 5, 4, 8, 3, 5]) // false, разные значения
+  compareArrays([9, 2, 4, 8, 2], [9, 2, 4]) // false, разные значения
+  compareArrays([1, 2, 3], [2, 3, 1]) // false, разные индексы, хотя и одинаковые значения
+  compareArrays([8, 1, 2], [8, 1, 2]) // true 
 
   const people = [
     {firstName: "Александр", secondName: "Карпов", age: 17, gender: "мужской"},
